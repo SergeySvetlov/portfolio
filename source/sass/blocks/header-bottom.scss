@@ -1,0 +1,53 @@
+.header-bottom {
+  padding: 100px 0 450px 0;
+
+  & h1 {
+    display: block;
+    margin: 0 auto 0 auto;
+    background: linear-gradient($color-default-white 33%,$color-coral-candy 66%, $color-mona-lisa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 120px;
+    width: fit-content;
+  }
+
+  & p {
+    display: block;
+    margin: 0 auto 0 auto;
+    font-family: "AlumniSans", "Arial", sans-serif;
+    color: $color-coral-candy;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 1.1;
+    width: fit-content;
+  }
+}
+
+@include vp-1023 {
+  .header-bottom {
+    padding: 70px 0 250px 0;
+
+    & h1 {
+      font-size: 90px;
+    }
+
+    & p {
+      font-size: 25px;
+    }
+  }
+}
+
+@include vp-767 {
+  .header-bottom {
+    padding: 70px 0 100px 0;
+
+    & h1 {
+      font-size: 70px;
+      text-align: center;
+    }
+
+    & p {
+      font-size: 16px;
+    }
+  }
+}

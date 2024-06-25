@@ -1,0 +1,98 @@
+.nav__toggle {
+  display: none;
+}
+
+.nav__list {
+  display: grid;
+  margin: 0 0 0 auto;
+  grid-template-columns: auto auto;
+  gap: 30px;
+}
+
+.nav__item {
+  & a {
+    font-weight: 600;
+    width: fit-content;
+    display: block;
+    max-width: 300px;
+    padding: 10px 28px;
+    background-position: center left;
+    background-repeat: no-repeat;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    border: 2px solid $color-mona-lisa;
+    border-radius: 50px;
+
+    &:hover {
+      background-color: $color-mona-lisa;
+      opacity: 1;
+      color: $color-default-black;
+    }
+
+    &:focus {
+      background-color: $color-mona-lisa;
+      opacity: 1;
+      color: $color-default-black;
+    }
+  }
+}
+
+@include vp-1023 {
+  .nav__list {
+    gap: 20px;
+  }
+
+  .nav__item {
+    & a {
+      font-weight: 400;
+      font-size: 14px;
+      max-width: 200px;
+      padding: 7px 20px;
+      border: 1px solid $color-mona-lisa;
+    }
+  }
+}
+
+@include vp-767 {
+  .nav__list {
+    grid-template-columns: auto;
+    gap: 0;
+    display: none;
+  }
+
+  .nav__toggle {
+    display: block;
+    position: relative;
+    width: 21px;
+    height: 20px;
+    margin: 30px 0 50px auto;
+    border: none;
+    background-color: transparent;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background-color: $color-mona-lisa;
+      box-shadow: 0 6px 0 0 $color-mona-lisa, 0 12px 0 0 $color-mona-lisa;
+    }
+  }
+
+  .nav__item {
+    background-color: $color-mardi-gras;
+    border: 1px solid $color-mona-lisa;
+    border-radius: 5px;
+    & a {
+      min-width: 200px;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      border: none;
+      border-radius: 0;
+      padding: 7px 7px 7px 7px;
+    }
+  }
+}
