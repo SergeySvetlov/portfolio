@@ -18,6 +18,9 @@ const animateAnchors = () => {
         // считаем на сколько скроллить за 1 такт
         let scrollBy = coordY / FRAMES_COUNT;
 
+        if (window.innerHeight + window.scrollY + scrollBy >= document.body.offsetHeight) {
+          clearInterval(scroller);
+        } else
         // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
         // и дно страницы не достигнуто
         if (scrollBy > window.scrollY - coordY && window.innerHeight + window.scrollY < document.body.offsetHeight) {
